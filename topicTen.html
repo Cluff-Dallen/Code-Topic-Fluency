@@ -5,11 +5,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicTen.css">
     <title>HTML5 Tags - Audio, Video, Canvas</title>
 </head>
 
 <body>
     <h1>Topic #10: HTML5 Tags: Audio, Video, Canvas</h1>
+
+    <h2>Video</h2>
+    <p>
+        In HTML5, adding video's just simply couldn't get any easier! All you need to do is add the following video tag. But of course you would want to instead add the video file of your choice.
+        <pre>&lt;video src="exampleVideo.mp4"&gt;&lt;/video&gt;</pre> Using this exact tag will result in the following setup for your video.
+    </p>
+
+    <video src="storm.mp4"></video>
+
+    <p>
+        But, there's a few issues with how this tag is used. First off, by default there are no controls! This is discouraging and could even be confusing for visitors to your site. Another issue, look how giganic the video is. There must be a better way that
+        this can be done? Well fortunatly there is. By using the same tag with the controls attribute, plus a height and width attribute like shown below, you can get the following result.
+        <pre>&lt;video src="exampleVideo.mp4" controls  width="300" height="200"&gt;&lt;/video&gt;</pre>
+    </p>
+
+    <video src="storm.mp4" controls width="500" height="350"></video>
+
+    <p>
+        Clearly this is a much more attractive approach. The size is no longer annoyingly huge, and the use can now access the video controls. These controls add a play button, pause, mute, video time, and fullscreen. The exact format my be different in each
+        browser but should more or less contain the same controls.
+    </p>
+    <p>
+        There isn't all that can be done with the video tag. We can also add in the attribute "autoplay" to have our video start on page load. Below is an example of what this tag looks like, and for your sake, the "muted" tag is also applied to make the video
+        muted by default (the attribute "loop" will also be applied, so that by the time you get to this video, it will still be playing).
+        <pre>&lt;video src="exampleVideo.mp4" controls autoplay muted loop width="300" height="200"&gt;&lt;/video&gt;</pre>
+    </p>
+
+    <video src="storm.mp4" controls autoplay muted loop width="500" height="350"></video>
+
+    <p>
+        Since all browsers don't support all formats, you can set up your video to try to display in one video format, and if it fails, it will try the next. An example of this would include the following tags:
+        <pre>
+            &lt;video controls&gt
+            &ltsourcesrc="exampleVideo.mp4" type="video/mp4;&gt;
+            &ltsourcesrc="exampleVideo.ogg" type="video/ogg;&gt;
+            Your browser doesn't have support for any avalible video type.
+            &lt;/video&gt;
+        </pre>
+    </p>
+    <p>
+        The last example that I will show in regards to the HTML5 video tag, is the poster attribute. There may be situations that arise that you wish to have a default picture show, before the video is played. To do this use the following tag:
+        <pre>&lt;video src="exampleVideo.mp4" poster="examplePoster.jpg" width="300" height="200"&gt;&lt;/video&gt;</pre>
+    </p>
+
+    <video src="storm.mp4" controls poster="cloud.jpg" width="500" height="350"></video>
+
+    <p>
+        It's important to understand that HTM5 supports MP4, Ogg, and WebM. But, all browsers do not neccisarly support these three video formats. So make sure to make your content display in all browsers when possible. There are also many more attributes that
+        can be used such as, preload, autobuffer, buffered and playsinline.
+    </p>
+
+    <h2>Audio</h2>
+    <p>
+        Similarly we have the audio tag avalible to us. Quite honestly it's very similar to how the video tag works. Most all of the same attributes from the video tag can also be applied to the auido tag. Let's start with a simple example.
+        <pre>&lt;audio src="exampleAudio.mp3" controls&gt;&lt;/audio&gt;</pre>
+    </p>
+
+    <audio src="ncs.mp3" controls>Your browser doesnot have support for HTML5 audio.</audio>
+    <p>
+        As you can see, the controls attribute was applied, and there is now a volume, pause, and play button avalible for the user. You can apply all of the video attributes as well such as loop, muted, and autoplay. But since it's pretty much te same, I don't
+        feel like it's neccsary to show the same examples for audio. Just remember that you are able to do it.
+    </p>
+
+    <h2>Canvas</h2>
+    <p>
+        The canvas tag is quite a bit more interesting and complex than both the video and audio tags. And it's entirely different. A canvas tag doesn't really do much of anything on it's own. It's just a tag designed to be a container for graphics. The canvas
+        element can draw graphics onto the screen if there is a script applied to it. Typically these scripts are written in JavaScript.
+
+        <br>
+        <br> Below is an example of a canvas that doesn't do anyting because no script is applied. A border is added to show the size of the canvas. It's important to notice that the canvas was given an ID. The purpose of an ID is so that JavaScript can
+        use this ID to draw to the canvas.
+
+        <pre>&lt;canvas id="Canvas" width="500" height="350" style="border:2px solid black;"&gt;&lt;/canvas&gt;</pre>
+    </p>
+    <canvas id="Canvas" width="500" height="350" style="border:2px solid black;"></canvas>
+    <p>
+        Once you've created your canvas tag, you'll want to actually make it do something. Again this is done with JavaScript. In this next example, we'll draw a hook like drawing into our canvas by having JavaScript access our canvas through getElementById.
+
+        <pre>
+        &lt;script&gt;
+            var canvas = document.getElementById("CanvasHook");
+            var ctx = canvas.getContext("2d");
+
+            ctx.moveTo(0, 0);
+
+            ctx.lineTo(200, 100);
+            ctx.lineTo(100, 230);
+            ctx.lineTo(230, 310);
+            ctx.lineTo(310, 200);
+
+            ctx.stroke();
+        &lt;/script&gt;
+        </pre>
+    </p>
+    <canvas id="CanvasHook" width="500" height="350" style="border:2px solid black;"></canvas>
+    <script>
+        var canvas = document.getElementById("CanvasHook");
+        var ctx = canvas.getContext("2d");
+
+        ctx.moveTo(0, 0);
+
+        ctx.lineTo(200, 100);
+        ctx.lineTo(100, 230);
+        ctx.lineTo(230, 310);
+        ctx.lineTo(310, 200);
+
+        ctx.stroke();
+    </script>
+    <p>
+        The above example is a pretty straightforward and simple drawing. Below is the code required to draw Hello World onto the canvas using JavaScript. In this example, you can choose the font size, font family, and position of the text.
+        <pre>
+        &lt;script&gt;
+            var canvas = document.getElementById("CanvasText");
+            var ctx = canvas.getContext("2d");
+        
+            ctx.font = "60px Georgia";
+            ctx.fillText("Hello World", 90, 175);
+        &lt;/script&gt;
+        </pre>
+    </p>
+
+    <canvas id="CanvasText" width="500" height="350" style="border:2px solid black;"></canvas>
+    <script>
+        var canvas = document.getElementById("CanvasText");
+        var ctx = canvas.getContext("2d");
+
+        ctx.font = "60px Georgia";
+        ctx.fillText("Hello World", 90, 175);
+    </script>
+    <p>
+
+    </p>
+
+
+
+
 
 
     <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
