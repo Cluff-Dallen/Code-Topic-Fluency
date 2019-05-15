@@ -5,12 +5,289 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Code Topic Fluency</title>
+    <link rel="stylesheet" type="text/css" href="topicOne.css">
+    <script type="text/javascript" src='topicOne.js'>
+    </script>
+    <title>JavaScript: Loops, Conditional Statements, Functions, Arrays</title>
 </head>
 
 <body>
-    <p>Topic ONE</p>
-    <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
+    <h1>JavaScript: Loops, Conditional Statements, Functions, Arrays</h1>
+
+    <h2>Loops</h2>
+    <p>
+        Loops are very useful in the computer world. The purpose and function of a loop is to excecute one or more statments a specific number of times. The number of times these statments are excecuted depend on the condition of the loop. There are four different
+        kinds of loops that are used within JavaScript.
+    </p>
+    <p>The loops are:</p>
+    <ul>
+        <li>for loop</li>
+        <li>for/in loop</li>
+        <li>while loop</li>
+        <li>do/while loop</li>
+    </ul>
+
+    <h4>For Loop</h4>
+
+    <p>The for loop requires the following syntax:</p>
+    <pre>
+        for (<i>index statement; conditional statement; incremental/decremental statement</i>)
+        {
+            <i>/* Statements to be repeated as long as condtion is true. */</i>
+        } </pre>
+
+    <p>
+        The way this loop works is we have an index. This can be set to any value that you might need. This index is often what is incremented/deremented. For example if we set our index to 1 like this, <i>i = 1;</i> , than each time we go through the
+        loop, the incremental statment will apply. That means if we set our incremental statment as <i>i++</i> than each time we complete the loop our index i, will increment by 1. But our loop will only continue, and our index will only increment as
+        long as the condtional statment is true. It is possible to have an infinite loop, be mindful of this.
+    </p>
+
+    <p>
+        An example of how a for loop works is shown below.
+    </p>
+
+    <label for="userInput">Input # of times you'd like to loop:</label>
+    <input name="userInput" type="text" id="userInput" width="2px" style="width: 30px;"></input>
+    <button id="submitButton" type="button" onclick="forLoop()">Submit</button>
+
+    <p id="forLoop"></p>
+
+    <p>
+        This loop as you can see is designed to count up each number until it's reached the number the user input. The following code for such a loop is the following:
+    </p>
+    <pre>
+        //create a string variable to store each number of the loop to display later.
+        var text = "";
+        
+        //Increment i, as long as it's less than userInput, increment by + 1 each time.
+        for (i = 1; i < userInput; i++)
+        {
+            text += i + " "; //add each number to text string
+        }
+
+        //display the text string showing each of the numbers you looped through!
+        document.getElementById('forLoop').innerHTML = text;</pre>
+
+    <!-- <h4>For/In Loop</h4>
+    <p>
+        The for/in loop is a bit different than the for loop. It's purpose is to loop through the properties of an object.
+
+    </p> -->
+
+    <h4>While Loop</h4>
+    <p>In my opinion, a while loop is a much simpiler loop to use. It's syntax is as following:</p>
+    <pre>
+        while (<i>conditional statement</i>)
+        {
+            <i>/* Statements to be repeated as long as condtion is true. */</i>
+        }
+    </pre>
+
+    <p>The way this loop works is that it will loop through the statements as long as the condition remains true. So "while" true, loop. If not true, don't loop.</p>
+    <p>
+        An example of how a while loop works is shown below.
+    </p>
+
+    <label for="userInput2">Input a # that you'd like to see decrease as long as it's able to:</label>
+    <input name="userInput2" type="text" id="userInput2" width="2px" style="width: 30px;"></input>
+    <button type="button" onclick="whileLoop()">Submit</button>
+
+    <p id="whileLoop"></p>
+
+    <p>As you may have noticed, this loop displayed it's current value starting from the user's input, and decreased by 1 while it was greater than or equal to 0. Once this condition became false, the loop came to an end. An example of how this can be done
+        is shown below.
+    </p>
+    <pre>
+        //create a string variable to store each number of the loop to display later.
+        var text = "";
+            
+        //As long as userInput remains greater than or equal to 0, loop.
+        while (userInput >= 0)
+        {
+            text += userInput + " "; //add the current value of user input to text string.
+            userInput--; //decrease user by one each time looped.
+        }
+    
+        //display the text string showing the user input decreaseing by one each time!
+        document.getElementById('whileLoop').innerHTML = text;
+    </pre>
+
+    <h4>Do/While Loop</h4>
+    <p>
+        The do/while loop works very similarly to the while loop, except with an additional component! The addition of "do" allows you to guarantee at least one loop to execute before the condition is checked. This way, you always loop at least once!
+    </p>
+
+    <p>The while loop requires the following syntax:</p>
+    <pre>
+        do {
+            <i>/* Statements to be repeated as long as condtion is true. */</i>
+        }
+        while (<i>conditional statement</i>); </pre>
+
+
+    <h2>Conditional Statements</h2>
+    <ul>
+        <li>if statement</li>
+        <li>if/else statement</li>
+        <li>if/else if statement</li>
+        <li>switch statement</li>
+    </ul>
+
+    <h4>If Statement</h4>
+    <p>
+        If statements are pretty straight forward and are used just like how you'd likely guess. If statement is a conditional statement that when the condition is met, and only if the condition is met, only then is the statement then executed. An example of
+        the syntax is below.
+    </p>
+    <pre>
+        if (/* Conditional Statement */)
+        {
+            //statement to be executed IF condition is true
+        }</pre>
+    <p>
+        Optionally, the if statement above could be used with out the curly braces. But you must be careful doing so because than only the imediate statement following is affected. The curley braces allow for multiple lines to be affected. Below is an example
+        of what the syntax would look like without the curley braces.
+    </p>
+    <pre>
+        if (/* Conditional Statement */)
+            //statement to be executed IF condition is true</pre>
+
+    <h4>If/Else Statement</h4>
+    <p>
+        In addition to the IF statement, we can add an else statement. What an else statement does, is that we first check to see if the if statement is true. If it is, go ahead an execute that statement then. But, if this if statement isn't true, than the else
+        statement will always be executed. The else statement is guaranteed to be executed if all other if statements fail. This can be a very helpful tool! Below is an example of the else statement's syntax in relation to the if statement.
+    </p>
+    <pre>
+         if (/* Conditional Statement */)
+        {
+            //statement to be executed IF condition is true
+        }
+        else 
+        {
+            //if the IF statement didn't pass, instead do this!
+        }
+    </pre>
+
+    <h4>Switch</h4>
+    <p>
+        Switch statements can save your life in specific situations. Let's say you're building a program to do something different depending on what the user inputs. You want to quit the program if they type q, display the information if they press d, add information
+        if they enter a, and if they enter any other key to give them an error message. If you think about it, there is going to be a LOT of if statatements. There has to be a better option? Well there is! And for situations like this, a switch statement
+        can be a great alternative. The syntax for a simple switch statement is shown below.
+    </p>
+    <pre>
+        switch (/* expression */){
+        case a: 
+            //do this 
+            break;
+        case b: 
+            //do this 
+            break;
+        case c: 
+            //do this 
+            break;
+        default: 
+            //if none of the above, do this instead
+        }</pre>
+    <p>Just to better explain what is happening here, our expression is be compared to each of the cases. If the expression matches a case, that code will be executed and then exit the switch statement But, if the expression didn't match any of the cases,
+        the defualt statement will instead be executed. The break statement causes the switch statement to end. An example matching what we described earlier regarding userinput can be shown below.
+    </p>
+    <pre>
+            switch (userInput){
+            case a: 
+                //add information
+                break;
+            case d: 
+                //display information
+                break;
+            case q: 
+                //quit program
+                break;
+            default: 
+                //if none of the above, display an error message! Unreconized character!
+            }</pre>
+    <h2>Functions</h2>
+    <p>
+        A function in JavaScript simply put is just a block of code designed to do some sort of specific task. It's a block of code that can be called at any time. A function has mutliple components such as the ability to return a value, or to accept paramaters.
+        A barebone example of the syntax for a function can be found below.
+    </p>
+    <pre>
+        //any function name can be used as long as name follows same rules as var.
+        function nameOfYourFunction(paramaterOne, paramaterTwo)
+        {
+            //create a variable x to store the value of paramaterOne + paramaterTwo.
+            var x = paramaterOne + paramaterTwo;
+
+            //return the value of variable x 
+            return x;
+        }
+    </pre>
+    <p>
+        The way this function works is that it's designed to take two paramaters, and then add them together into x. Than the value of x is retuned and can be stored/used elsewhere. Functions are used all the time. In fact all the JavaScript I've used on this
+        page so far has been done using functions. I simpily build a function to complete a task I desire, and then call it where apropriate. I'll show you an example of a pretty easy function.
+    </p>
+
+    <button onclick="myFunction()">Click me and I will call a function called, myFunction()</button>
+
+    <p>
+        The code that I used to make this function work is shown below:
+    </p>
+    <pre>
+        function myFunction()
+        {
+          color = prompt("Enter a color to have this function change the background!");
+          document.body.style.backgroundColor = color; 
+        }</pre>
+
+    <p>
+        The way this works is I have the html button set to call myFunction() when clicked. When the function is called it will immediately prompt for a color, and than set that color as the background color. There is nothing returned in this example.
+    </p>
+
+    <pre>
+            var x = 5;
+            var y = 10;
+            var w = 0;
+            var text = ""
+            
+            function addStuff(x, y) {
+                x += 1;
+                y += 1;
+                w = (x + y);
+                        
+                return w;
+            }
+    </pre>
+
+    <p>The above code is just a simple function that will take two paramaters, add 1 to each, than add them together. The function than returns the new total.
+    </p>
+
+    <button onclick="addStuff(x,y)">Click to call function</button>
+    <p>When the function is called, the resulting math will appear here: <span id="addFunction"></span></p>
+
+    <h2>Arrays</h2>
+
+    <p>
+        Array's are a very important part of JavaScript, in fact the purpose of using array's is to store multiple values into a single variable. This is extremely helpful and has a lot of different use cases. Array's are called very like a variable, except there's
+        more to it. The syntax is as follows:
+    </p>
+    <pre>
+        var arrayName = ["ItemOne", "ItemTwo", "ItemThree"];</pre>
+    <p>
+        When creating an array it's important that we add the square brackets. Inside these square brackets we can put as many items as we would like. Each item if a string should be in quotes, otherwise any numbers can be entered in normally but all must be
+        separated by a comma. Don't forget to add the semi colon at the end of this statement! Once you've created your array, there's a lot that can be done with them. For example you're able to add an item to an array using push(), or remove an item
+        by using pop(). We can access the value of any given element in the array by using an index number such as <i>exampleArray[2]</i>, and if this exact element contained a value we would be able to access it. Examples and further explanations
+        can be found below.
+    </p>
+
+    <h4>Creating Array</h4>
+
+    <h4>Accessing Array</h4>
+
+    <h4>Array Methods (Push, Pop, Length)</h4>
+
+    <h4>Changing an Array Element</h4>
+
+    <h4>Array Methods</h4>
+
+    <p>Return Home: <a href="index.html ">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
 </body>
 
 </html>
