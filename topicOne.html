@@ -278,15 +278,36 @@
     </p>
 
     <h4>Creating Array</h4>
+    <p>You can create an empty array with the following code:</p>
+    <pre>var arrayExample = [];</pre>
+    <p>Or you can create an array by adding a specific number of elements as such:</p>
+    <pre>var array Example = ["Item1", "Item2", "Item3"];</pre>
+    <p>
+        This creates an array with three elements in it! Overall it's pretty easy to create an array. You can add about as many items as you want.
+    </p>
 
-    <h4>Accessing Array</h4>
+    <h4>Accessing/Changing an Array Element</h4>
+    <p>With the array we created, we can access the elements like so:</p>
+    <pre>exampleArray[0] = "Element1";</pre>
+    <p>The above code can be used to access any element assuming it exists. If we wanted to access the second element, we would just do "exampleArray[1]". It's important to understand that array's index starts with 0, not 1! Also important to know that when
+        we use the above code, we're not just accessing an element, but we're changing it too. We changed the string stored in the first element of the array into "Element1".
+    </p>
 
     <h4>Array Methods (Push, Pop, Length)</h4>
-
-    <h4>Changing an Array Element</h4>
-
-    <h4>Array Methods</h4>
-
+    <p>Not only can we access the elements in an array, we can also use methods built for arrays. Specifically we are able to use pop(), push(), and .length, these are all very useful methods. And I'll show you how you can use each of them!
+    </p>
+    <pre>var movies = ["Tron", "Cars", "Avengers"];</pre>
+    <p>Now that the array has been created, let's attempt to add an element to the array using push!</p>
+    <pre>movies.push("Aquaman");</pre>
+    <p>Now the array contains {Tron, Cars, Avengers, Aquaman}. The element gets added to the end of the array using push. We can remove the last element on the array using pop();
+    </p>
+    <pre>movies.pop();</pre>
+    <p>We've now removed the last element on the array. Now it's back to it's original state as {Tron, Cars, Avengers}. Last but not least I'd like to show you the .length property. We can see how many elements are in the array by using length. Below is
+        how we can do it:
+    </p>
+    <pre>movies.length;</pre>
+    <p>This should output 3! Since there are only currently 3 movies in our array. It's a pretty straight forward property but is helpful for many tasks Of course there are other methods that can be used but these are some of the most useful ones.
+    </p>
     <p>Return Home: <a href="index.html ">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
 </body>
 

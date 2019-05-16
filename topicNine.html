@@ -2,13 +2,47 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src='topicNine.js'></script>
+    <title>JavaScript Events and Animation and Transition Events</title>
 </head>
-  <body>
-  <p>Topic Nine</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body style="background-color:  white;">
+
+    <h1>JavaScript Events (Including Mobile) & Animation/Transition Events</h1>
+    <p>
+        JavaScript events are used within HTML to make your page react and respond! An avent can heppen when the page is finsihed loading, or when something is input, or even when there is a click. There are all kinds of events that occur. when an event happens,
+        JavaScript will execute code.
+    </p>
+
+    <h4>Onclick</h4>
+    <p>If you were to click the "Onclick" button, you will cause the page color to change by using JavaScript!
+    </p> <button onclick="f1()">Onclick</button>
+
+    <h4>Onchange</h4>
+    <p>We can also demenstrate how the Onchange event works. When the radio input is changed, JavaScript will change the background color!</p>
+    <form onchange="f2()">
+        <input type="radio" name="favColor" value="green" id="radio1">Green<br>
+        <input type="radio" name="favColor" value="red" id="radio2">Red<br>
+        <input type="radio" name="favColor" value="blue" id="radio3">Blue
+    </form>
+
+    <h4>Onkeydown</h4>
+    <p></p>
+    <button onkeydown="f3()">Onkeydown</button>
+
+    <h4>Onload</h4>
+    <p id="onLoad1" onload="f4()"></p>
+
+    <h4>Onmouseover</h4>
+    <p>Onmouseover triggers an event to occur when the mouse is hovering over the html item. So when you hover over the button below, be ready for a suprise!</p>
+    <button onmouseover="f5()">Hover your mouse over me to see what I will do!</button>
+    <p id="imgHover"></p>
+
+
+    <p>Return Home: <a href="index.html">Home Page: All coding topics</a></p>
+</body>
+
 </html>
