@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicNine.css">
     <script type="text/javascript" src='topicNine.js'></script>
     <title>JavaScript Events and Animation and Transition Events</title>
 </head>
 
-<body style="background-color:  white;">
+<body onkeydown="f3()" onload="f4()" style="background-color:  white;">
 
     <h1>JavaScript Events (Including Mobile) & Animation/Transition Events</h1>
     <p>
@@ -20,6 +21,19 @@
     <h4>Onclick</h4>
     <p>If you were to click the "Onclick" button, you will cause the page color to change by using JavaScript!
     </p> <button onclick="f1()">Onclick</button>
+    <pre>
+        < button onclick="f1()"> Onclick < /button>
+        function f1() {
+          var color = document.body.style.backgroundColor;
+      
+          if (color == 'white') {
+              color = 'pink';
+          } else {
+              color = 'white';
+          }
+      
+          document.body.style.backgroundColor = color;
+      }</pre>
 
     <h4>Onchange</h4>
     <p>We can also demenstrate how the Onchange event works. When the radio input is changed, JavaScript will change the background color!</p>
@@ -29,18 +43,84 @@
         <input type="radio" name="favColor" value="blue" id="radio3">Blue
     </form>
 
+    <pre> 
+    < form onchange="f2()">
+    < input type="radio" name="favColor" value="green" id="radio1">Green< br>
+    < input type="radio" name="favColor" value="red" id="radio2">Red< br>
+    < input type="radio" name="favColor" value="blue" id="radio3">Blue
+    < /form>
+
+    function f2() {
+    if (document.getElementById('radio1').checked) {
+      document.body.style.backgroundColor = 'green';
+    }
+    if (document.getElementById('radio2').checked) {
+      document.body.style.backgroundColor = 'red';
+     }
+
+    if (document.getElementById('radio3').checked) {
+      document.body.style.backgroundColor = 'blue';
+     }
+}</pre>
+
     <h4>Onkeydown</h4>
-    <p></p>
-    <button onkeydown="f3()">Onkeydown</button>
+    <p onkeydown="f3()" id="keydown1">Press a key down to make this bunny disapear! <br> <img src="rabbit.jpeg" alt="rabbit in a magicians hat" onkeydown="f3()"></p>
+
+    <pre>
+    < p onkeydown="f3()" id="keydown1">
+
+    function f3() {
+    alert("You've called the keydown event, now the bunny has disappeared!");
+     document.getElementById("keydown1").innerHTML = "And just like that, your keypress triggered the event that made this bunny disappear!";
+      }</pre>
 
     <h4>Onload</h4>
-    <p id="onLoad1" onload="f4()"></p>
+    <p id="onLoad1"></p>
+
+    <pre>
+        < p id="onLoad1">
+        < body onkeydown="f3()" onload="f4()" style="background-color:  white;">
+
+
+        function f4() {
+          alert("This alert is showing because you've triggered the onload event!");
+          document.getElementById("onLoad1").innerHTML = "The only reason this text is showing, is because the onLoad event was triggered! Otherwise this would be blank.";
+      }</pre>
 
     <h4>Onmouseover</h4>
     <p>Onmouseover triggers an event to occur when the mouse is hovering over the html item. So when you hover over the button below, be ready for a suprise!</p>
     <button onmouseover="f5()">Hover your mouse over me to see what I will do!</button>
     <p id="imgHover"></p>
 
+    <pre>
+        < p id="imgHover">
+
+        function f5() {
+          document.getElementById("imgHover").innerHTML = "< img src='softwarefunny.jpeg'>";
+      }</pre>
+
+    <h4>Ontouchstart</h4>
+    <p>To demenstrate how Ontouchstart works, touch the book of mormon (mobile or touchscreen display) to fix it to the correct position.</p>
+    <p id="flip"><img src="upsidedown.png" alt="upside down book of mormon" ontouchstart="f6()" width="200px" height="200px"></p>
+
+    <pre>
+        < p id="flip">< img src="upsidedown.png" alt="upside down book of mormon" ontouchstart="f6()" width="200px" height="200px">
+        
+        function f6() {
+          document.getElementById("flip").innerHTML = '< img src="rightside.jpeg" alt="right side up book of mormon" ontouchstart="f6()" width="200px" height="200px">';
+      }</pre>
+
+    <h4>Ontouchend</h4>
+    <p>If your using a mobile device or touchscreen device you can also have an event happen when your finger stops touching an object. Below you can see what changes will happen when you do exactly that.</p>
+    <p ontouchend="f7()" style="background-color: green; border: solid black 2px; height: 200px;" id="touchend1">Touch here to change color and text when your finger leaves!</p>
+
+    <pre>
+        < p ontouchend="f7()" style="background-color: green; border: solid black 2px; height: 200px;" id="touchend1">
+
+        function f7() {
+          document.getElementById("touchend1").style.background = "red";
+          document.getElementById("touchend1").innerHTML = "You changed this text by making your finger leave!";
+      }</pre>
 
     <p>Return Home: <a href="index.html">Home Page: All coding topics</a></p>
 </body>
