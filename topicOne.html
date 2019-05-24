@@ -68,12 +68,6 @@
         //display the text string showing each of the numbers you looped through!
         document.getElementById('forLoop').innerHTML = text;</pre>
 
-    <!-- <h4>For/In Loop</h4>
-    <p>
-        The for/in loop is a bit different than the for loop. It's purpose is to loop through the properties of an object.
-
-    </p> -->
-
     <h4>While Loop</h4>
     <p>In my opinion, a while loop is a much simpiler loop to use. It's syntax is as following:</p>
     <pre>
@@ -123,7 +117,6 @@
             <i>/* Statements to be repeated as long as condtion is true. */</i>
         }
         while (<i>conditional statement</i>); </pre>
-
 
     <h2>Conditional Statements</h2>
     <ul>
@@ -308,6 +301,24 @@
     <pre>movies.length;</pre>
     <p>This should output 3! Since there are only currently 3 movies in our array. It's a pretty straight forward property but is helpful for many tasks Of course there are other methods that can be used but these are some of the most useful ones.
     </p>
+
+    <h4>Associative Arrays Methods</h4>
+    <p>It's also important to be aware of what an associative array is. We can create an associative array using the following syntax:</p>
+    <pre>
+        exampleArray = { key1: 'value1', key2:'value2'};</pre>
+    <p>Of course in this example,oure values are strings but that does not have to be the case. We are able to access these values using array notation such as: </p>
+    <pre>
+        exampleArray['key1'];</pre>
+    <p>This will let us access what ever value is in key1. Using this array notation, we can also change the value like so.</p>
+    <pre>
+        exampleArray['key1'] = 'different value';</pre>
+    <p>As you can see it works much like a typical array in that sense. We can also change the value through propterty assignment.
+    </p>
+    <pre>
+        exampleArray.key2='another different value';
+    </pre>
+
+
     <p>Return Home: <a href="index.html ">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
 </body>
 
