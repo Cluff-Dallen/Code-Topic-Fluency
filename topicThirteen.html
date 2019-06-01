@@ -2,13 +2,89 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicThirteen.css">
+    <script type="text/javascript" src='topicThirteen.js'></script>
+    <title>Designing, Defining, and Triggering CSS3 Animations without Custom Libraries</title>
 </head>
-  <body>
-  <p>Topic Thirteen</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body>
+    <h1>Designing, Defining, and Triggering CSS3 Animations without Custom Libraries</h1>
+
+    <h3>CSS3 Animations</h3>
+    <p>We can use animations to make our webpage more enjoyable and appealing.
+    </p>
+    <div id="anim1"></div>
+    <p>You may want to refresh the page to catch the animation above, but regardless it changes from green to red via animation. The way this is done is actually pretty simple. Since the above animation is a div with the id "anim1" I added the following
+        line to link the animation to the element: </p>
+    <pre>
+      < div id="anim1">< /div>
+      #anim1 {
+      animation-name: example;
+      }
+    </pre>
+    <p>Now we've got the id attached to an animation name. We just need to create the actual animation for it to be applied. Below I'll share my code for the above animation.</p>
+    <pre>
+        @keyframes example {
+          from {background-color: green;}
+          to {background-color: red;}
+        }
+    </pre>
+    <p>
+        Here we're creating the animation called example and say that we want the elemnt to change from green to red. We are also able to specifically delare the duration of the animation, only with animation the syntax is "animation-duration".
+    </p>
+    <pre>
+        animation-duration: 5s;</pre>
+
+    <p>We can also have the animation change colors depending on % of completion of the animation. For example the following code for the animation will do exactly this.</p>
+    <pre>
+        @keyframes example2 {
+          0%   {background-color:red; left:0px; top:0px;}
+          15%   {background-color:orange; left:0px; top:0px;}
+          25%  {background-color:yellow; left:200px; top:0px;}
+          40%   {background-color:green; left:0px; top:0px;}
+          50%  {background-color:blue; left:200px; top:200px;}
+          65%   {background-color:purple; left:0px; top:0px;}
+          75%  {background-color:blue; left:0px; top:200px;}
+          90%   {background-color:pink; left:0px; top:0px;}
+          100% {background-color:black; left:0px; top:0px;}
+        }
+    </pre>
+    <div id="anim2"></div>
+    <p>As you can see as the animation (10s) progresses, the colors of the animation changes accordingly. This is pretty neat! What's also neat is that we can add a delay with the following code: </p>
+    <pre>
+        animation-delay: 3s;
+    </pre>
+
+    <p>This will cause the animation to wait for three seconds before displaying/starting the animation.</p>
+
+    <p>Another important component of animation is the attribute "animation-iteration-count: number". Using this you can set how many times you'd like the animation to play, below is an example of an animation set to play 10 times.</p>
+
+    <div id="anim3"></div>
+    <p>Another example to prove that I can do much more than just color change with animations!</p>
+    <div id="anim4"></div>
+    <p>And another example of my skills/knowlege with text instead of a box.</p>
+    <div id="anim5">HELLO World!</div>
+
+
+    <p>Although my examples may have included the animation as a change in color, you can change pretty much any css attribute using animation. There's an endless sea of possabilities for what can be done with CSS animations. Also you can trigger animations
+        with JavaScript.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="index.html">Return Home</a>
+</body>
+
 </html>

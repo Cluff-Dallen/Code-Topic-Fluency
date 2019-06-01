@@ -1,0 +1,188 @@
+pre {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    margin-bottom: 10px;
+    overflow: auto;
+    width: auto;
+    padding: 5px;
+    background-color: #eee;
+    width: 650px!ie7;
+    padding-bottom: 20px!ie7;
+    max-height: 600px;
+}
+
+#divZero {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: height 3s, background 3s;
+}
+
+#divZero {
+    height: 500px;
+    background: red;
+    transition-timing-function: linear;
+}
+
+#divOne {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: height 3s, background 3s;
+    transition-timing-function: ease;
+}
+
+#divOne:hover {
+    height: 500px;
+    background: red;
+}
+
+#divTwo {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: height 3s, background 3s;
+    transition-timing-function: linear;
+}
+
+#divTwo:hover {
+    height: 500px;
+    background: red;
+}
+
+#divThree {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: height 3s, background 3s;
+    transition-timing-function: ease-in;
+}
+
+#divThree:hover {
+    height: 500px;
+    background: red;
+}
+
+#divFour {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: height 3s, background 3s;
+    transition-timing-function: ease-out;
+}
+
+#divFour:hover {
+    height: 500px;
+    background: red;
+}
+
+#divFive {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: height 3s, background 3s;
+    transition-timing-function: ease-in-out;
+}
+
+#divFive:hover {
+    height: 500px;
+    background: red;
+}
+
+#divSix {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: height 3s, background 3s;
+    transition-delay: 5s;
+}
+
+#divSix:hover {
+    height: 500px;
+    background: red;
+}
+
+#divSeven {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: background 10s, height 10s, width 10s;
+}
+
+#anim1 {
+    width: 100px;
+    height: 100px;
+    animation-name: example;
+    animation-duration: 10s;
+}
+
+@keyframes example {
+    from {
+        background-color: green;
+    }
+    to {
+        background-color: red;
+    }
+}
+
+#anim2 {
+    width: 100px;
+    height: 100px;
+    animation-name: example2;
+    animation-duration: 10s;
+}
+
+#anim3 {
+    width: 100px;
+    height: 100px;
+    animation-name: example2;
+    animation-duration: 10s;
+    animation-iteration-count: 10;
+}
+
+@keyframes example2 {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    15% {
+        background-color: orange;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+    40% {
+        background-color: green;
+        left: 0px;
+        top: 0px;
+    }
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    65% {
+        background-color: purple;
+        left: 0px;
+        top: 0px;
+    }
+    75% {
+        background-color: blue;
+        left: 0px;
+        top: 200px;
+    }
+    90% {
+        background-color: pink;
+        left: 0px;
+        top: 0px;
+    }
+    100% {
+        background-color: black;
+        left: 0px;
+        top: 0px;
+    }
+}

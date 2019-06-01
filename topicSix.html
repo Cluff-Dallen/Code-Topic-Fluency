@@ -2,13 +2,80 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicSix.css">
+    <script type="text/javascript" src='topicSix.js'></script>
+    <title>DOM Manipulation Using createElement, appendChild, insertBefore etc</title>
 </head>
-  <body>
-  <p>Topic Six</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body>
+    <h1>DOM Manipulation Using createElement, appendChild, insertBefore etc</h1>
+    <h2 style="color: red;">JUST A HEADS UP, clicking the buttons below each step will add content to the bottom of the screen, you may need to scroll!</h2>
+    <p>So what is DOM? Well DOM stands for Document Object Model. It's a way that we define elements in html as objects, defines properties, events, methods, for all html elements. DOM is how we can access, or alter, or remove html elements. So if used correctly,
+        or if well understood, you can completely change all the html in your page through various DOM Manipulation techniques.</p>
+
+    <p>We are able to access/alter the DOM using many different programming languages, but we are focusing on javascript for the purpose of this lesson. </p>
+
+    <h3>First Step</h3>
+    <button type="button" onclick="f1()">Add Heading via DOM manipulation</button>
+    <h3>Second Step</h3>
+    <button type="button" onclick="f2()">Add Paragraph via DOM manipulation</button>
+    <h3>Third Step</h3>
+    <button type="button" onclick="f4()">Add list item via DOM manipulation</button><button type="button" onclick="f5()">Add another list item via DOM manipulation</button>
+    <ul id="myList">
+        <li>Red</li>
+        <li>White</li>
+        <li>Blue</li>
+    </ul>
+    <p>
+        As you can see, by clicking the button in step one we create a header, and it's instantly added to our webpage. The code we use to add this is as follows:
+    </p>
+    <pre>
+        var heading = document.createElement('h1');
+        var text = document.createTextNode('Example Heading');
+        heading.appendChild(text);
+        document.body.appendChild(heading);
+    }</pre>
+    <p>
+        Here we are creating a variable called heading, and in this variable we are creating an HTML h1 element and storing it inside. We are then creating a varible called text, and storing a string inside it. Finally we are using "appendChild" to add the text
+        into the h1 element. We than use appendChild again, to add the heading with the text that was added into it, into our webpage. Pretty simple!
+    </p>
+    <p>
+        In step two, we do pretty much the same thing, but we are adding a paragraph element with different text to the webpage, I'll show the code here too but doesn't need explaination:
+    </p>
+    <pre>
+        var para = document.createElement('p');
+        var text = document.createTextNode('Example paragraph text. You now have text inside the paragraph. DOM manipulation is the coolest. So glad that to have learned about it.');
+        para.appendChild(text);
+        document.body.appendChild(para);</pre>
+    <p>
+        So far you can see that we've used createElement to create two different html elements, and add the appropriate text inside using appendChild, and then used appendChild again to add this into the document/webpage. These two are very useful! But there
+        is always more we can learn. I'm going to show you how to also use insertBefore!
+    </p>
+
+    <p>
+        As you can see we have a list. In step three when you click either button, a color is added at the beginning of the list. This is done similarly to how we added a paragraph and a header to the page, but with the addition of using insertBefore. I'll show
+        you how I did this below!
+    </p>
+    <pre>
+          var newItem = document.createElement('li');
+          var text = document.createTextNode('Green');
+          newItem.appendChild(text);
+          document.body.appendChild(newItem);
+      
+          var list = document.getElementById("myList");
+          list.insertBefore(newItem, list.childNodes[0]);</pre>
+    <p>
+        The way that we do this is we create a variable called newItem, we make it create at li, we than create a varible called text with the color green stored inside. We append the two together. We add it to the document, but we create a varible called list,
+        which includes the current list but we than make it so that the newitem is added before the others at the beggining of the list by using the insertBefore. It's pretty simple as well!
+    </p>
+
+    <p>This is how you manipulate DOM! Hope you enjoyed.</p>
+
+
+    <p><a href="index.html">Return Home</a></p>
+</body>
+
 </html>

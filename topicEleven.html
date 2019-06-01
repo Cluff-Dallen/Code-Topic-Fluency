@@ -2,13 +2,117 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicEleven.css">
+    <script type="text/javascript" src='topicEleven.js'></script>
+    <title>Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</title>
 </head>
-  <body>
-  <p>Topic Eleven</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body>
+    <h1>Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries</h1>
+
+
+    <h3>CSS3 Transitions</h3>
+    <p>
+        To create a transition effect we need to do two things. We need to know and specify the CSS property that we are wanting to add the effect to, and how long we want the duration to be. Between these two things, we can fairly easily create a CSS transition.
+    </p>
+
+    <p>
+        To start we'll create a div element so that we can create and apply our transition.
+    </p>
+    <pre>
+      < div>   < /div>
+  div {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: height 3s, background 3s;
+  }
+  div:hover{
+    height: 500px;
+    background: red;
+  }
+</pre>
+    <p>
+        If your paying attention you can see that all we did was first create a div element. Than we added the required code for the css. If you look we set the width and heigth of the div element to a specific size to start. We than gave this element a color,
+        and than in the transition property we specify that we want the height to change and color, and we want it to change for 3s long when the transition is activiated. Below this we have another line of CSS specifiying that when we hover over a div,
+        that we would like to change it's height, and color for the previously specified duration. Also note that duration by default is 0!
+    </p>
+
+    <p>It's important that we understand the syntax is: </p>
+    <pre>
+      transition: cssproperty time, cssproperty time;
+    </pre>
+    <p>
+        Here we can have as many different css properties transition as we want. They must be separated by a comma and include the time next to <strong>each</strong> CSS property. Also don't forget to include the triggering event such as hover! Once hovered
+        upon in our example, that is when the transition is applied!
+    </p>
+    <p>
+        We are also able to specify how we want the time to be applied. For example we can use ease which is default that starts slow, continues to a faster pace, than ends slow again. Other options for can be found below with an example of what each does.
+    </p>
+    <div id="divOne">transition-timing-function: ease;</div>
+    <br>
+    <div id="divTwo">transition-timing-function: linear</div>
+    <br>
+    <div id="divThree">transition-timing-function: ease-in</div>
+    <br>
+    <div id="divFour">transition-timing-function: ease-out</div>
+    <br>
+    <div id="divFive">transition-timing-function: ease-in-out</div>
+    <p>
+        To change the transition timing you just need the following syntax:
+    </p>
+    <pre>
+      transition-timing-function: enterDesiredTimingHere;
+    </pre>
+    <p>
+        But of course there is always more that can be done. For example you can add a delay using the property "transition-delay: numofsecond;" By using this like you get something like the following which is set for a 5s delay.
+    </p>
+    <div id="divSix">transition-timing-function: ease-in-out</div>
+    <p>
+        As you may have noticed this delay made it so when I hovered that nothing happened until after the 5 second delay has completed. Also instead of declaring the transition property, followed by the time, we are able to do them separtetly. You would just
+        use the css property "transition-property: height;" followed by the property "transition-duration: 5s;" Personally though, I prefer the shorthand version for simplicity!
+    </p>
+    <p>
+        Something worth meantioning is that this is how transitions work. There is so much that can be done using this. You are not limited to only changing the height and color. You can change any css property in a similar fashion!
+    </p>
+
+    <p>
+        Another intersting thing that we can do is we can actually have a transition trigger using javascript. For example check out the box below.
+    </p>
+
+    <div id="divSeven"></div>
+    <button type="button" onclick="f1()">Click Me</button>
+    <p>The way this works is that I created a button with the event 'onclick'. When the button is clicked it will trigger/call the function f1(), which is designed to activate the tranition. Below is the code for how I was able to trigger this transition
+        with JavaScript. </p>
+    <pre>
+        //html
+        < div id="divSeven">< /div>
+        < button type="button" onclick="f1()">Click Me< /button>
+
+        //css
+        #divSeven {
+          width: 100px;
+          height: 100px;
+          background: green;
+          transition: background 10s, height 10s, width 10s;
+      }
+        //js
+        function f1() {
+          const square = document.getElementById('divSeven');
+      
+          square.style.background = 'pink';
+          square.style.width = '200px';
+          square.style.height = '200px';
+      }</pre>
+    <p>
+        Of course you can choose to use any javascript triggering event such as onhover, onclick, onchange.. they will all work! Just use the code above and your tranition will be triggered via JavaScript.
+    </p>
+    <p>That's pretty much all the important things you need to know to get started with using transitions!
+    </p>
+    <p><a href="index.html">Return Home</a></p>
+</body>
+
 </html>

@@ -2,13 +2,73 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicTwelve.css">
+    <script type="text/javascript" src='topicTwelve.js'></script>
+    <title>Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries</title>
 </head>
-  <body>
-  <p>Topic Twelve</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body>
+    <h1>Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries</h1>
+    <p>Transform is a property that allows for one to apply 2D/3D changes to an element. Transforms are just like they sound, a way of transforming the element. You can transorm an element by changing it's rotation, where it's located, scale, skew, and many
+        more.
+    </p>
+
+    <p>Overall it's pretty easy to apply a transformation. First I created a div with the id "transform1". Than in my CSS file, I use the following syntax to add a transformation.</p>
+    <pre>
+        transform: rotate(360deg);
+        
+        //transform: transformsNameThatYouWant;
+    </pre>
+
+    <p>Once you use this syntax, like I did, you're able to make your element transform! Look below, you'll see my div square rotate 360 degrees!</p>
+    <div id="transform1"></div>
+
+    <p>But you may be wondering what else you can do other than rotate? Well let's try to instead scale it! To do this use the syntax below.</p>
+    <pre>
+        transform: scaleX(4);
+        or
+        transform: scaleY(4);
+    </pre>
+    <p>Using this syntax you can scale either X or Y, to any number you desire. Below are some examples to show that I can do this.</p>
+    <div id="transform2"></div>
+    <div id="transform3"></div>
+    <p>We've now successfully rotated and scaled our element. Let's learn how to skew it now!</p>
+    <pre>
+        transform: skewY(20deg);
+    </pre>
+
+    <p>If we use the syntax above, we can skew to any degree we want. Note that you can also do skewX.</p>
+
+    <div id="transform4"></div>
+    <br>
+    <div id="transform5"></div>
+    <p>Both are examples of each type of skew that we are able to apply.</p>
+
+    <p>Something to note is that the way we are actually triggering this transformation to occur, is by using the syntax in our CSS file:</p>
+    <pre>
+        #transform1:hover {
+          
+        }</pre>
+    <p>This triggers the transformation with the id "transform1" to occur when the user hovers over the element. Of course you can trigger it other ways than just hover, just replace hover with the way you want this to trigger.</p>
+
+    <p>It's also important to note that you should use:</p>
+    <pre>    transition: all 2s;</pre>
+    <p>This is neccisary to specify what you want to transform, and how long you want it's duration. Don't forget to adjust this the way you desire!</p>
+
+    <p>Your also able to apply as many different transformations as you want, your not just limited to one. Just be careful to not over do it, you still want your page to be appealing to your users!</p>
+
+    <p>Our examples are focused around 2D elements, but just know that there are also transforms for 3D elements such as perspective, or rotatez, skewZ, scaleZ, and the list goes on. There's so much that can be done.</p>
+
+
+
+
+
+
+
+    <a href="index.html">Return Home</a>
+</body>
+
 </html>
