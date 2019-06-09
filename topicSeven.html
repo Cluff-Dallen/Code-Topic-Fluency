@@ -17,7 +17,7 @@
     </div>
 
     <div id="animals">
-        <h2 class="spaceHeader">Animal Class</h2>
+        <h2 class="spaceHeader">Animal</h2>
         <hr>
         <h3 class="animalHeader">The majestic wolf</h3>
         <p class="animalDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem asperiores, placeat atque aliquam alias voluptatibus assumenda, temporibus architecto impedit nam officia tenetur excepturi ex doloremque nemo sint? Modi, voluptatum aliquam!</p>
@@ -37,7 +37,7 @@
     </div>
 
     <div id="space">
-        <h2 class="spaceHeader">Space Class</h2>
+        <h2 class="spaceHeader">Space</h2>
         <hr>
         <h3 class="spaceHeader">The Earth</h3>
         <p class="spaceDescription">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem asperiores, placeat atque aliquam alias voluptatibus assumenda, temporibus architecto impedit nam officia tenetur excepturi ex doloremque nemo sint? Modi, voluptatum aliquam!</p>
@@ -59,19 +59,50 @@
     <div class="bottom">
         <p>
             The topic to be taught in this webpage is manipulating CSS Class Properties Using JavaScript. To make this easy to demenstrate my knowlege of how this works, I've made two coloums. On the left we have our animals, and on the right we have space. Each
-            have their own classes for their headers, images, text, and coloums. Quite honestly I could have just kept the one class for each, but for the purpose of this exercise they each have multiple classes.
+            have their own headers, images, text, and coloums.
         </p>
         <p>
-            We can manipulate the css propterties using javascript to make any kind of change we may desire, and it's pretty easy too.
+            We can manipulate the css propterties using javascript to make any kind of change we may desire, and it's pretty easy too. So first off we'll need to create a button (you can use any event you prefer to trigger the change, but I like to do onclick). Below
+            is what I have my button set as:
+        </p>
+        <pre>
+            < button type="button" onclick="f1()">Click me< button></pre>
+        <p>If you notice, I have my button set to call my function f1() upon being clicked. This button will soon be able to manipulate our css when ever we click it via JavaScript.</p>
+
+        <p>Now that we have our button, we just need to make our function actually do something. So first we need to create our funciton in JS.</p>
+
+        <pre>
+            function f1(){
+
+            }
+        </pre>
+
+        <p>
+            Now that we have the function made, we just need to fill it with the code required to manipulate the css.
         </p>
 
+        <pre>
+                document.getElementById('animals').style = "color: red";
+        </pre>
 
-        <button type="button" onclick="f1()">Click me</button>
+        <p>By adding the above line into our function, we are able to manipulate the css. When the button is clicked, it will call this function. This function by using document.getElementsById.style, you're able to change what ever css property you desire.
+            In this example I have it set to change the color of the text to red when clicked. And that's it! That's how you manipulate CSS using JS. Just don't forget to use document.getElementById, and don't forget to assign an Id to the element you
+            are wanting to change. Below are some examples.</p>
 
+        <h2>Examples</h2>
+        <button type="button" onclick="f1()">Manipulate CSS Animal font color</button>
+        <button type="button" onclick="f2()">Manipulate CSS Space font color</button>
+        <br>
+        <button type="button" onclick="f3()">Manipulate CSS Animal background color</button>
+        <button type="button" onclick="f4()">Manipulate CSS Space background color</button>
+        <br>
 
+        <button type="button" onclick="f5()">Manipulate CSS Animal FontSize</button>
+        <button type="button" onclick="f6()">Manipulate CSS Space Font Size</button>
 
+        <br>
 
-
+        <p>As you can see, if you were to presse any of the buttons above, the css is manipulated using Javascript, so go ahead. Mess around!</p>
 
         <p>Return Home: <a href="index.html ">Manipulating CSS Class Properties Using JavaScript</a></p>
     </div>

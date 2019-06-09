@@ -2,13 +2,60 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicFour.css">
+    <script type="text/javascript" src='topicFour.js'></script>
+    <title>Using XMLHTTPRequest to Consume a JSON Web Service</title>
 </head>
-  <body>
-  <p>Topic Four</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body>
+    <h1>Using XMLHTTPRequest to Consume a JSON Web Service</h1>
+    <p>Using XMLHTTPRequest, I'm able to pull information from a JSON Web Service to update my webpage with the current information on Bitcoin.</p>
+
+    <h3>Bitcoin Current Information</h3>
+    <div id="crypto">
+        <h2><strong>Bitcoin</strong></h2>
+        <hr>
+        <p><strong>Crypto Coin Ticker:</strong> <span id="base"></span></p>
+        <p><strong>Currency to compare to:</strong><span id="target"></span></p>
+        <p><strong>Price: </strong>$<span id="price"></span></p>
+        <p><strong>Volume: </strong>$<span id="volume"></span></p>
+        <p><strong>Price Change: </strong>$<span id="change"></span></p>
+        <br>
+    </div>
+
+    <p>For those of you who are unfamiliar with what Bitcoin is, well it's a crypto currency. A digital currency. It is the future. There are tons of different crypto currencies, the most well known being Bitcoin. For those who know nothing about it, buying
+        bitcoin is similar (and very different) to buying stock. The value changes all the time, only with Bitcoin and other Crypto currencies, it's much more volitile. More risk, more reward and more use!</p>
+
+    <p>Nonetheless, below you will find the current information for Bitcoin, refresh and it will likely change! This information is coming from a JSON webservice using XMLHTTPRequest.</p>
+
+    <p>The way this works is in JavaScript, we first create a varible like so:</p>
+    <pre>var requestURL = 'https://www.cryptonator.com/api/full/btc-usd';</pre>
+    <p>This creates a variable called requestURL that is set to a specific URL containing the information we need on bitcoin. </p>
+    <pre>We than use the following syntax:
+        var request = new XMLHttpRequest();
+    </pre>
+    <p>Of course it doesn't have to be named request but it's easier to understand that way.</p>
+
+    <p>We then need to actually GET the information, to do this we use the syntax:</p>
+    <pre>
+        request.open('GET', requestURL);</pre>
+    <p>Doing this at first, we're just telling it to go to the url and get this data. There are different methods that could be used. You can use GET, POST, DELETE, or even PUT. Here we're saying the method we want to use (again you can use a different method
+        if you desire. And then, where we are getting the information from, which in this example it is requestURL.</p>
+
+    <p>
+        After we say what we want to do, we send the request to the server using:
+    </p>
+    <pre>
+            request.onload = function() {
+             //list of information to pull, and add into the document.
+            }</pre>
+
+    <p>By following the above steps, you should be able to do this too! Overall it's pretty simple. Hopefully this demenstrates my knowlege on the topic!</p>
+
+    <a href="index.html">Return Home</a>
+</body>
+
 </html>

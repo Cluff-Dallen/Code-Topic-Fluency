@@ -2,13 +2,155 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage </title>
+    <link rel="stylesheet" type="text/css" href="topicFive.css">
+    <script type="text/javascript" src='topicFive.js'></script>
 </head>
-  <body>
-  <p>Topic Five</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body>
+    <h1>Local Storage</h1>
+    <p>You can access your local storage by using localStorage syntax. But you may not know what it is? Well, it's a way of storing data locally on your browser rather than via cookies. What's interesting about this way of storing data is the fact that it
+        will stay with you even after you close your brower session. Although we are able to have data store for just a session if we desired, we'd just have to use sessionStorage instead!</p>
+
+    <p>Either way, you might be wondering how we can even store information into local stoarge? Well that part is actually pretty easy. The way we store inforamtion into local storage is by using the following format.</p>
+
+    <h3>setItem</h3>
+    <pre>
+        localStorage.setItem("key", "value");.
+      </pre>
+    <p>
+        You choose a key which is like an variable or a name, and a value to be stored into it. So for example if I did this:
+    </p>
+
+    <pre>
+          localStorage.setItem("school", "BYUI");
+      </pre>
+
+    <h3>getItem</h3>
+    <p>
+        The above line of code will actually store BYUI into the key "school". Now that I have it stored, I need to access/use it. How can that be done? Pretty much the same way, only instead of using setItem, we'll use getItem. Below is how I would display/access
+        my stored value.
+    </p>
+    <pre>
+          document.getElementById("example1").innerHTML = localStorage.getItem("school");
+      </pre>
+    <p>We can now see what information was stored in the local storage, as you can tell, that would be BYUI. Now, there is another way to either store data or change what is stored and it's very similar, we can also do this:</p>
+
+    <h3>Alternative way to set a value/change a value.</h3>
+    <pre>
+        localStorage.school = "UNM";
+    </pre>
+    <p>Here we are setting localStorage.school to hold the value UNM in replace of BYUI, now if we were to try to display using the same previous line, it would instead say UNM rather than BYUI.</p>
+
+    <h3>removeItem</h3>
+    <p>We can also remove the item all together, to do this we use removeItem instead just like so: </p>
+    <pre>localStorage.removeItem("school");</pre>
+    <p>Notice here if we tried to display what was in school, nothing would appear. I've now removed that key and it's value all together.</p>
+
+
+    <h3>Arrays</h3>
+    <p>We can also use local storage with an array. Unfortnatly you'll also need to convert the array using JSON stringify.</p>
+
+    <p>For this example, let's say I have a list of crypto currencies for example.. (yes I love crypto).</p>
+
+    <pre>
+      var cryptoList ["Bitcoin", "Litecoin", "XRP", "Holo", "BNB", "LINK", "ZIL"];
+    </pre>
+    <p>Now we need to convert this JS array into JSON format using stringify. This can be done like this: </p>
+    <pre>
+      JSON.stringify(cryptoList);
+    </pre>
+    <p>Now we just combine the two like so</p>
+    <pre>
+        var cryptoList = ["Bitcoin", "Litecoin", "XRP", "Holo", "BNB", "LINK", "ZIL"];
+
+        localStorage.setItem("cryptoList", JSON.stringify(cryptoList));
+    </pre>
+    <p>That's how you would use an array in local storage. Now to just access/display it we would do the following.</p>
+    <pre> document.getElementById("example1").innerHTML = localStorage.getItem("cryptoList");</pre>
+
+    <h3>sessionStorage</h3>
+    <p>As previously meantioned I just wanted to renforce the fact that all the same logic applies to storing information into a session instead of local storage. The difference is it's gone after the browser is closed. To do this you would instead use "sessionStorage"
+        in replace of localStorage.</p>
+
+
+    <h3>Example1</h3>
+    <pre>
+        //create key and value
+        localStorage.setItem("school", "BYUI");
+
+        //change value  to UNM
+        localStorage.school = "UNM";
+
+        //remove it all together (pointless but for example)
+        localStorage.removeItem("school");
+
+        //create the value again, but this time it set to ASU
+        localStorage.school = "ASU";
+
+        //display school.
+        document.getElementById("example1").innerHTML = "School: " + localStorage.getItem("school");
+
+    </pre>
+    <div id="example1" style="color: red;"></div>
+
+    <h3>Example2</h3>
+    <pre>//example 2
+        //creat JS object
+        var cryptoList = ["Bitcoin", "Litecoin", "XRP", "Holo", "BNB", "LINK", "ZIL"];
+
+        //store it in local storage, under the key crypto list, and set the value to the JSON converstion of our JS object crypto list
+        localStorage.setItem("cryptoList", JSON.stringify(cryptoList));
+
+        //display
+        document.getElementById("example2").innerHTML = localStorage.getItem("cryptoList");</pre>
+    <div id="example2" style="color: red;"></div>
+
+    <p>Between these two examples, it should be pretty clear that I understand the topic! Hopefully my tutorial/evidence made since and was useful to you. Thank you!</p>
+
+    <script>
+        //example1
+
+        //create key and value
+        localStorage.setItem("school", "BYUI");
+
+        //change value  to UNM
+        localStorage.school = "UNM";
+
+        //remove it all together (pointless but for example)
+        localStorage.removeItem("school");
+
+        //create the value again, but this time it set to ASU
+        localStorage.school = "ASU";
+
+        //display school.
+        document.getElementById("example1").innerHTML = "School: " + localStorage.getItem("school");
+
+
+
+        //example 2
+        //creat JS object
+        var cryptoList = ["Bitcoin", "Litecoin", "XRP", "Holo", "BNB", "LINK", "ZIL"];
+
+        //store it in local storage, under the key crypto list, and set the value to the JSON converstion of our JS object crypto list
+        localStorage.setItem("cryptoList", JSON.stringify(cryptoList));
+
+        //display
+        document.getElementById("example2").innerHTML = localStorage.getItem("cryptoList");
+    </script>
+
+
+
+
+
+
+
+
+
+    <a href="index.html">Return Home</a>
+</body>
+
 </html>

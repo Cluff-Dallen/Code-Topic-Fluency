@@ -50,6 +50,7 @@
     margin: auto;
 }
 
+transition: all 2s;
 #transform5:hover {
     transform: skewX(30deg);
     transition: all 2s;

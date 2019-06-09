@@ -2,13 +2,96 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicThree.css">
+    <script type="text/javascript" src='topicThree.js'></script>
+
+    <title>JSON Parse, Stringify</title>
 </head>
-  <body>
-  <p>Topic Three</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body>
+    <h1>JSON Parse, Stringify</h1>
+    <p>First off it's important that we understand what JSON even is. JSON stands for javascript object notation. Which means that JSON is a file format that uses readable text. Typically JSON is used when we want to send data to a web server via a string.</p>
+    <h2>Parse</h2>
+
+    <p>For this example we'll assume we had this JSON string come in from a webserver:</p>
+    <pre>'{"familyName":"Cluff", "familySize":3, "church":"LDS"}'</pre>
+    <p>For the sake of this lesson we'll store it into a JavaScript variable called text like so: </p>
+    <pre>var text = '{"familyName":"Cluff", "familySize":3, "church":"LDS"}'</pre>
+
+    <p>We can now create a JS varaible called object. We then parse the JSON string and store it into the object variable. This can be done with the following syntax:</p>
+    <pre>var object = JSON.parse(text);</pre>
+
+    <p>We've now parsed our JSON text using JavaScript, and can now attempt to access the data stored inside. To access the data we stored by using the syntax "object.nameOfWhatYouWant". For example if I wanted to just display my family size, I could do
+        this:
+    </p>
+    <pre>document.getElementById("example").innerHTML = object.familySize;</pre>
+    <p>Doing this will result in displaying my family size of 3! This is how you use JSON parse, it's not to difficult. Of course typically you might want to have the data come from a web server, but in this example I just added my own data to have parsed.
+        Either way will work!</p>
+
+    <p>Below is a live working example of me displaying the string I parsed using JS.</p>
+    <h3>Parse Example:</h3>
+    <p id="example" style="color: red;"></p>
+
+    <script>
+        //JSON style text
+        var text = '{"familyName":"Cluff", "familySize":3, "church":"LDS"}'
+
+        //Parse
+        var object = JSON.parse(text);
+
+        //Store text into our example paragraph on the webpage
+        document.getElementById("example").innerHTML = "Family Name: " + object.familyName + ", Family Size: " + object.familySize + ", Our Religion: " + object.church;
+
+        var myInfo = {
+            firstName: "Dallen",
+            lastName: "Cluff",
+            major: "SoftwareEng"
+        };
+
+        var textJSON = JSON.stringify(myInfo);
+
+        document.getElementById("example2").innerHTML = textJSON;
+
+        var obj = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        var myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+    </script>
+
+    <h2>Stringify</h2>
+    <p>So we just learned how to use parse, which converts JSON text into JS array that we can access and use, while Stringify does a sort of opposite of this. Stringify allows us to convert a JS object into a JSON string.</p>
+
+    <p>To demenstrate how this works, I'll first create a JS object. You should know how to do this. I'll go ahead and put this into my object, "var myInfo = {firstName: "Dallen", lastName: "Cluff", major: "SoftwareEng"};". I'll then create a variable called
+        textJSON and store my JS object, myInfo, into it using JSON.stringify. This is how that is done:</p>
+    <pre>var textJSON = JSON.stringify(object);</pre>
+    <p>We've now turned our JS object into a JSON string!</p>
+    <p>Below is a live working example of my JS object being converted into a JSON string using stringify.</p>
+
+    <h3>Stringify Example:</h3>
+
+
+    <p id="example2" style="color: red;"></p>
+
+    <script>
+        var myInfo = {
+            firstName: "Dallen",
+            lastName: "Cluff",
+            major: "SoftwareEng"
+        };
+
+        var textJSON = JSON.stringify(myInfo);
+
+        document.getElementById("example2").innerHTML = textJSON;
+    </script>
+
+    <p>That's how you use stringify and parse with JSON and JS, hopefully that made since! Overall it was pretty easy and I hope this is great evidence of my ability to use it since I have working examples of both!</p>
+    <a href="index.html">Return Home</a>
+</body>
+
 </html>
