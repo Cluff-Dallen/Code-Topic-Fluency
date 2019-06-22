@@ -108,11 +108,24 @@
         //display
         document.getElementById("example2").innerHTML = localStorage.getItem("cryptoList");</pre>
     <div id="example2" style="color: red;"></div>
-    <h3>example3</h3>
+    <h3>Example3 with Associative Array</h3>
+    <pre>
+        var family = {
+            'father': 'Dallen',
+            'mother': 'Kree',
+            'daughter': 'Sofia'
+        };
+
+        sessionStorage.setItem('family', JSON.stringify(family));
+
+        var retrievedData = sessionStorage.getItem('family');
+
+        var familyInfo = JSON.parse(retrievedData)
+        document.getElementById('example3').innerHTML = "Father's Name: " + familyInfo.father + ", Mother's Name: " + familyInfo.mother + ", Daughters Name: " + familyInfo.daughter;</pre>
     <div id="example3" style="color: red;"></div>
 
 
-    <p>Between these two examples, it should be pretty clear that I understand the topic! Hopefully my tutorial/evidence made since and was useful to you. Thank you!</p>
+    <p>Between these three examples, it should be pretty clear that I understand the topic! Hopefully my tutorial/evidence made since and was useful to you. Thank you!</p>
 
     <script>
         //example1
@@ -157,7 +170,7 @@
         var retrievedData = sessionStorage.getItem('family');
 
         var familyInfo = JSON.parse(retrievedData)
-        document.getElementById('example3').innerHTML = "Father's Name: " + familyInfo.father + "Mother's Name: " + familyInfo.mother + "Daughters Name: " + familyInfo.daughter;
+        document.getElementById('example3').innerHTML = "Father's Name: " + familyInfo.father + ", Mother's Name: " + familyInfo.mother + ", Daughters Name: " + familyInfo.daughter;
     </script>
 
 
