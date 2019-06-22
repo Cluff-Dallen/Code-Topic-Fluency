@@ -19,16 +19,47 @@
     <p>We are able to access/alter the DOM using many different programming languages, but we are focusing on javascript for the purpose of this lesson. </p>
 
     <h3>First Step</h3>
+    <h4>createElement/appendChild Example</h4>
     <button type="button" onclick="f1()">Add Heading via DOM manipulation</button>
     <h3>Second Step</h3>
+    <h4>createElement/appendChild Example</h4>
     <button type="button" onclick="f2()">Add Paragraph via DOM manipulation</button>
+
     <h3>Third Step</h3>
-    <button type="button" onclick="f4()">Add list item via DOM manipulation</button><button type="button" onclick="f5()">Add another list item via DOM manipulation</button>
+    <h4>insertBefore Examples (includes also appendChild/create Element)</h4>
+    <button type="button" onclick="f4()">Add list item via DOM manipulation</button>
+    <br>
+    <button type="button" onclick="f5()">Add another list item via DOM manipulation</button>
+    <p>We can also remove items from this list using removeChild. Click below for an example of this!</p>
+
+    <h4>removeChild Examples</h4>
+    <button type="button" onclick="f6()">Remove top list item using removeChild</button>
+    <pre>
+        function f6() {
+            var list = document.getElementById("myList");
+            list.removeChild(list.childNodes[0]);
+        }</pre>
+    <br>
+    <button type="button" onclick="f7()">Remove third list item using removeChild</button>
+    <pre>
+        function f6() {
+            var list = document.getElementById("myList");
+            list.removeChild(list.childNodes[3]);
+        }</pre>
     <ul id="myList">
         <li>Red</li>
         <li>White</li>
         <li>Blue</li>
     </ul>
+    <h4>replaceChild Example</h4>
+    <p>You must first add an item before replaceChild will work. This is useful for changing a value already in a list with an alternate value. Example below.</p>
+    <button type="button" onclick="f8()">replaceChild</button>
+    <pre>
+        var textnode = document.createTextNode("Yellow");
+
+        var list = document.getElementById("myList").childNodes[0];
+        list.replaceChild(textnode, list.childNodes[0]);</pre>
+    <hr>
     <p>
         As you can see, by clicking the button in step one we create a header, and it's instantly added to our webpage. The code we use to add this is as follows:
     </p>

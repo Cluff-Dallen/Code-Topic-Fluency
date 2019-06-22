@@ -15,7 +15,7 @@
     <p>You can access your local storage by using localStorage syntax. But you may not know what it is? Well, it's a way of storing data locally on your browser rather than via cookies. What's interesting about this way of storing data is the fact that it
         will stay with you even after you close your brower session. Although we are able to have data store for just a session if we desired, we'd just have to use sessionStorage instead!</p>
 
-    <p>Either way, you might be wondering how we can even store information into local stoarge? Well that part is actually pretty easy. The way we store inforamtion into local storage is by using the following format.</p>
+    <p>Either way, you might be wondering how we can even store information into local stoarge?y Well that part is actually pretty easy. The way we store inforamtion into local storage is by using the following format.</p>
 
     <h3>setItem</h3>
     <pre>
@@ -108,6 +108,9 @@
         //display
         document.getElementById("example2").innerHTML = localStorage.getItem("cryptoList");</pre>
     <div id="example2" style="color: red;"></div>
+    <h3>example3</h3>
+    <div id="example3" style="color: red;"></div>
+
 
     <p>Between these two examples, it should be pretty clear that I understand the topic! Hopefully my tutorial/evidence made since and was useful to you. Thank you!</p>
 
@@ -140,8 +143,22 @@
 
         //display
         document.getElementById("example2").innerHTML = localStorage.getItem("cryptoList");
-    </script>
 
+        //example 3
+        //associative arrays
+        var family = {
+            'father': 'Dallen',
+            'mother': 'Kree',
+            'daughter': 'Sofia'
+        };
+
+        sessionStorage.setItem('family', JSON.stringify(family));
+
+        var retrievedData = sessionStorage.getItem('family');
+
+        var familyInfo = JSON.parse(retrievedData)
+        document.getElementById('example3').innerHTML = "Father's Name: " + familyInfo.father + "Mother's Name: " + familyInfo.mother + "Daughters Name: " + familyInfo.daughter;
+    </script>
 
 
 

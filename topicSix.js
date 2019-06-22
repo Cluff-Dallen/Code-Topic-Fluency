@@ -31,3 +31,20 @@ function f5() {
     var list = document.getElementById("myList");
     list.insertBefore(newItem, list.childNodes[0]);
 }
+
+function f6() {
+    var list = document.getElementById("myList");
+    list.removeChild(list.childNodes[0]);
+}
+
+function f7() {
+    var list = document.getElementById("myList");
+    list.removeChild(list.childNodes[2]);
+}
+
+function f8() {
+    var textnode = document.createTextNode("Yellow");
+
+    var list = document.getElementById("myList").childNodes[0];
+    list.replaceChild(textnode, list.childNodes[0]);
+}
