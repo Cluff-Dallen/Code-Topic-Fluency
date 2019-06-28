@@ -14,10 +14,10 @@
     <h1>CSS3 Transitions and Animations and triggering them with JavaScript</h1>
 
     <p>
-        Another intersting thing that we can do is we can actually have a transition trigger using javascript. For example check out the box below.
+        An intersting thing that we can do is we can actually have a transition, animation, or transformations trigger using javascript. For example of transition triggered with JS check out the box below.
     </p>
 
-
+    <h3>Transition tirggered with JS example: </h3>
     <div id="divSeven"></div>
     <button type="button" onclick="f1()">Click Me</button>
     <p>The way this works is that I created a button with the event 'onclick'. When the button is clicked it will trigger/call the function f1(), which is designed to activate the tranition. Below is the code for how I was able to trigger this transition
@@ -42,10 +42,81 @@
           square.style.width = '200px';
           square.style.height = '200px';
       }</pre>
+
+
+
+
+    <h3>Animation tirggered with JS example: </h3>
+    <p>This one also wroks upon being clicked except this time it's an animation being triggered. Once clicked, the animation will move the limegreen bar across the rectangle!</p>
+    <div id="divEight">
+        <div id="jsAnimation"></div>
+    </div>
+    <button type="button" onclick="f2()">Click Me</button>
+    <pre>
+        //html
+        < div id="divEight">
+                < div id="jsAnimation">< /div>
+            < /div>
+            < button type="button" onclick="f2()">Click Me< /button>
+        //css
+        #jsAnimation {
+            width: 25px;
+            height: 200px;
+            background-color: limegreen;
+            position: sticky;
+        }
+        
+        #divEight {
+            width: 80px;
+            height: 200px;
+            margin: 25px;
+            position: relative;
+            border: 2px solid black;
+            background-color: green;
+        }
+        //js
+        function f2() {
+
+            var bar = document.getElementById("jsAnimation");
+        
+            var x = setInterval(move, 1);
+        
+            var p = 1;
+        
+            function move() {
+        
+                if (p != 100) {
+                    bar.style.left = p + 'px';
+                    p++;
+                }
+        
+            }
+        }</pre>
+
+
+
+    <h3>Transformation tirggered with JS example: </h3>
+    <p>This example is pretty simple, when clicked we will skew the square!</p>
+    <div>
+        <div id="square" onclick="f3()"></div>
+    </div>
+    <pre>//html
+        < div id="square" onclick="f3()">< /div>
+//css
+        #square {
+            background-color: green;
+            height: 100px;
+            width: 100px;
+        }
+
+//js
+        function f3() {
+            document.getElementById("square").style.transition = "all 2s";
+            document.getElementById("square").style.transform = "skew(25deg)";
+        }</pre>
+
     <p>
-        Of course you can choose to use any javascript triggering event such as onhover, onclick, onchange.. they will all work! Just use the code above and your tranition will be triggered via JavaScript.
-    </p>
-    <p>That's pretty much all the important things you need to know to get started with using transitions!
+        Of course you can choose to use any javascript triggering event such as onhover, onclick, onchange.. they will all work! Just use the code above and your tranition, animation, or transformation will be triggered via JavaScript.
     </p>
 
     <a href="index.html">Return Home</a>
