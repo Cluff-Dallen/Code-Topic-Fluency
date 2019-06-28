@@ -2,13 +2,204 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-  <title>Code Topic Fluency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="topicTwo.css">
+    <script type="text/javascript" src='topicTwo.js'></script>
+    <title>JavaScript Objects</title>
 </head>
-  <body>
-  <p>Topic Two</p>
-  <p>Return Home: <a href="index.html">#1: JavaScript – Loops, Conditional Statements, Functions, Arrays</a></p>
-  </body>
+
+<body>
+    <h1>JavaScript Objects</h1>
+    <p>Now that you know what JavaScript is, you might find yourself asking, what is a JavaScript Object? Well what a JS Object can be easily explained!</p>
+
+
+    <h2>Object Creation
+    </h2>
+    <p>We are able to define a object with an object literal. An object literal is a way that we are able to create a javascript object, but with a very specific way of defining it. In an object literal definition, we'll use the keyword "var".</p>
+
+    <p>So we use the var keyword, followed by a variable name and an assignment operator. We then add curly braces, followed by a name, then a colon, and then a value associated with that name. If it's a string or character, you will need quotes. Otherwise,
+        just seprate each value pair with a comma. An example of how to define an object with object literal is shown below:</p>
+    <pre>
+      var myself = {kids: 1, hasWife: "true", age: 21, student: "true", favColor: "Green"};
+    </pre>
+
+    <p>I'm also able to instead create an empty object, and then later add in values. Example below:</p>
+    <pre>
+      var dog = {};
+    </pre>
+    <p>Than I can add properties in!</p>
+    <pre>
+      dog.breed = "Yorkie";
+    </pre>
+    <p>It's important to note that the way we did this is by having the object name followed by a '.' and then followed by a name and it's value. This dot between the two indicates that the property belongs to the specified object.</p>
+
+    <p>Alternatively, we can define an object with an object constructor as well. An example of how this can be done is shown below:</p>
+
+    <pre>
+              var myself = new Object();
+
+              myself.age = 21;
+              myself.kids = 1;
+              myself.hasWife = "true";
+            </pre>
+
+    <p>This way is pretty similar to the way above, only it's got the new keyword, and it's a bit more work/typing! Personally I prefer the first way of doing this.</p>
+
+    <p>We can also use a constructor to create an object.</p>
+    <pre>
+              const dogOne = new dog("Yorkie", "Black", "6 Months"); 
+              const dogTwo = new dog("Lab", "Yellow", "2 Years");
+            </pre>
+
+    <h3>Object Creation Example: </h3>
+    <p>For our example we will use the object literal syntax!</p>
+
+    <pre>
+        var dog = {
+          breed: document.getElementById("userInput1").value,
+          name: String(document.getElementById("userInput2").value),
+          age: String(document.getElementById("userInput3").value)
+      };
+  
+      document.getElementById("dogInfo").innerHTML = "Your Dog's Breed: " + dog.breed + "<br> Your Dog's Name: " + dog.name + "<br> Your Dog's Age: " + dog.age;</pre>
+
+    <form>
+        <label>Dog Breed: </label>
+        <input name="userInput1" type="text" id="userInput1" width="12px" style="width: 50px;"></input>
+
+        <label>Dog Name: </label>
+        <input name="userInput2" type="text" id="userInput2" width="12px" style="width: 50px;"></input>
+
+        <label>Dog Age:</label>
+        <input name="userInput3" type="text" id="userInput3" width="12px" style="width: 50px;"></input>
+    </form>
+    <br>
+    <button onclick="f1()">Submit</button>
+    <br>
+    <p>Your results displayed: </p>
+    <br>
+    <div id="dogInfo"></div>
+
+
+
+
+    <h2>Inheritance</h2>
+    <p>You might not have known it but all JavaScript objects inherit both methods and properties from a prototype. If you look below this is how you can use inheritance!</p>
+
+
+    <h3>Inheritance Example: </h3>
+    <p></p>
+    <pre>
+        function Dog(breed, name, age) {
+          this.breedName = breed;
+          this.dogName = name;
+          this.age = age;
+      }
+  
+      Dog.prototype.color = "Black and Brown";
+  
+      var myDog = new Dog("Lab", "Charlie", "5");
+  
+      document.getElementById("example2").innerHTML = myDog.color;</pre><br>
+    <button onclick="f2()">Display Inheritance</button>
+    <br>
+    <p>When you click the button, we will apply inheeritance and display it's result!</p>
+    <p>Your results displayed: </p>
+    <br>
+    <div id="example2"></div>
+
+
+
+
+    <h2>Properties</h2>
+    <p>So we know how to create an object, it's important to understand the details of an object. For example, we need to understand properties! In our dog example at beginning, breed, name, and age would be be the object properties. While dog is the object
+        name.
+    </p>
+
+    <p>Syntax:</p>
+    <pre>
+      objectName.property
+      or
+      objectName["property"]</pre>
+
+    <h3>Properties Example: </h3>
+    <p>Since understanding properties is pretty easy, and the examples above use properties too, our example is pretty simple and not much explanation is needed!</p>
+    <pre>
+        var dog = {
+          breed: "Lab",
+          name: "Charlie",
+          age: "3"
+      };
+  
+ document.getElementById("example3").innerHTML = "dog.breed: " + dog.breed + "<br> dog.name: " + dog.name + "<br> dog.age: " + dog.age;}</pre>
+    <p>In this example, breed, name and age are properties, and we access them and display them by using document.getElementById set equal to the desired property "dog.age", or "dog.breed". In this example the values storied inside these properties of the
+        object are displayed!</p>
+    <button onclick="f3()">Example 3</button>
+    <br>
+    <p>Your results displayed: </p>
+    <br>
+    <div id="example3"></div>
+
+
+
+
+
+    <h2>Methods</h2>
+    <p>Methods are functions/actions that are performed on an object, or objects. They are stored as a property, which properties are what we just learned about!</p>
+
+    <h3>Methods Example: </h3>
+    <p>For this example, we will add to our dog object a method to display the dog's full name! Of course what is meant by that is the owners last name, being added to the dog's first name. And so for this example, that is exactly what we do! We add a method
+        as a propety, and then we end up calling it at the end to dispaly our result!</p>
+    <pre>
+      var dog = {
+        breed: "Lab",
+        name: "Charlie",
+        age: "3",
+        dogFullName: function() { return this.name + " Cluff"; }
+    };
+
+    document.getElementById("example4").innerHTML = dog.dogFullName();</pre>
+    <button onclick="f4()">Example 4</button>
+    <br>
+    <p>Your results displayed: </p>
+    <br>
+    <div id="example4"></div>
+
+
+
+
+
+
+    <h2>Instantiation</h2>
+
+    <p>Instantiation is a way of creating things in JavaScript. There are four patterns used, and that is:
+
+        <ul>
+            <li>Functional</li>
+            <li>Functional Shared</li>
+            <li>Prototypal</li>
+            <li>Psudoclassical</li>
+        </ul>
+
+        Each of these will create an object, and create methods and properties for an object.</p>
+
+    <h4>Functional</h4>
+    <p>This method involves creating a function, and in that function we have an empty objet, and add all of our properties and methods into them and return it.</p>
+
+    <h4>Functional Shared</h4>
+    <p>Similar to functional, functional shared makes methods that can be used by all objects. It's a similar process to functional only metheds are defined in a different object, and than we extend our object to have these methods, followed by returning
+        an object. </p>
+
+    <h4>Prototypal</h4>
+    <p>This method has you create all methods in a seperate object and then create a function. In this function you use the syntax "Object.create" to attach methods, and then you return an object.</p>
+
+    <h4>Psudoclassical</h4>
+    <p>In Psudoclassical we create a new variable and assign "this" to it, methods are then assigned it. This method trys to reduce the amount of typing requried. </p>
+
+
+    <a href="index.html">Return Home</a>
+</body>
+
 </html>
